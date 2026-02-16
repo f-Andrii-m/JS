@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Triangle solver — JS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 720px; }
+    label { display:block; margin-top:10px; }
+    input[type="number"] { width:140px; }
+    select { width:220px; }
+    button { margin-top:12px; padding:8px 12px; }
+    pre { background:#f4f4f4; padding:12px; border-radius:6px; margin-top:14px; }
+  </style>
+</head>
+<body>
+  <h2>Розв'язувач прямокутного трикутника</h2>
+
+  <div>
+    <label>Аргумент 1:
+      <input id="val1" type="number" step="any" placeholder="число">
+    </label>
+    <label>Тип аргумент 1:
+      <select id="type1">
+        <option value="leg">leg (катет)</option>
+        <option value="hypotenuse">hypotenuse (гіпотенуза)</option>
+        <option value="adjacent angle">adjacent angle (прилеглий кут до катета)</option>
+        <option value="opposite angle">opposite angle (протилежний кут до катета)</option>
+        <option value="angle">angle (гострий кут — використовувати тільки разом з hypotenuse)</option>
+      </select>
+    </label>
+
+    <label>Аргумент 2:
+      <input id="val2" type="number" step="any" placeholder="число">
+    </label>
+    <label>Тип аргумент 2:
+      <select id="type2">
+        <option value="leg">leg (катет)</option>
+        <option value="hypotenuse">hypotenuse (гіпотенуза)</option>
+        <option value="adjacent angle">adjacent angle (прилеглий кут до катета)</option>
+        <option value="opposite angle">opposite angle (протилежний кут до катета)</option>
+        <option value="angle">angle (гострий кут — використовувати тільки разом з hypotenuse)</option>
+      </select>
+    </label>
+
+    <button id="solveBtn">Обчислити</button>
+
+    <pre id="out">Результат з'явиться тут...</pre>
+  </div>
+
+<script>
+console.log("ІНСТРУКЦІЯ: Викликати функцію triangle(value1, type1, value2, type2).");
+console.log("Дозволені типи (рядки): 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'.");
+console.log("Приклади:");
+console.log("  triangle(4, 'leg', 8, 'hypotenuse');");
+console.log("  triangle(8, 'hypotenuse', 4, 'leg');");
+console.log("Правила:");
+console.log(" - 'angle' слід використовувати ТІЛЬКИ коли одним з аргументів є 'hypotenuse'.");
+console.log(" - 'adjacent angle' / 'opposite angle' інтерпретуються стосовно наданого катета.");
+console.log("Кути вводяться у градусах (Math.* працює в радіанах).");
+
+function degToRad(d){ return d * Math.PI / 180; }
+function radToDeg(r){ return r * 180 / Math.PI; }
+function round(x, n=4){ return Math.round(x * Math.pow(10,n)) / Math.pow(10,n); }
+
+function triangle(v1, t1, v2, t2) {
+  if (typeof t1 !== 'string' || typeof t2 !== 'string') {
+    console.log("Типи повинні бути рядками.");
+    return "failed";
+  }
+  const norm = s => s.toLowerCase().trim();
+  const type1 = norm(t1);
+  const type2 = norm(t2);
+
+  const allowed = ['leg','hypotenuse','adjacent angle','opposite angle','angle'];
+  if (!allowed.includes(type1) || !allowed.includes(type2)) {
+    console.log("Невідомий тип аргументу. Перечитайте інструкцію.");
+    return "failed";
+  }
+
+  const sideTypes = ['leg','hypotenuse'];
+  const hasSide = sideTypes.includes(type1) || sideTypes.includes(type2);
+  if (!hasSide) {
+    console.log("Потрібен хоча б один бік (leg або hypotenuse).");
+    return "failed";
+  }
+
+  if ((type1 === 'angle' && type2 !== 'hypotenuse') || (type2 === 'angle' && type1 !== 'hypotenuse')) {
+    console.log("Тип 'angle' використовувати можна тільки разом з 'hypotenuse'.");
+    return "failed";
+  }
+
+  const num1 = Number(v1);
+  const num2 = Number(v2);
+  if (!isFinite(num1) || !isFinite(num2)) {
+    console.log("Обидва значення повинні бути числами.");
+    return "failed";
+  }
+
+  let a=null, b=null, c=null; 
+  let alpha=null, beta=null; 
+
+  try {
+    if (type1 === 'leg' && type2 === 'leg') {
+      a = num1; b = num2;
+      if (a <= 0 || b <= 0) return "Некоректні значення: катети повинні бути > 0";
+      c = Math.hypot(a,b);
+      alpha = radToDeg(Math.asin(a/c));
+      beta = 90 - alpha;
+    }
+    else if (type1 === 'leg' && type2 === 'hypotenuse' || type1 === 'hypotenuse' && type2 === 'leg') {
+      if (type1 === 'leg') { a = num1; c = num2; }
+      else { a = num2; c = num1; }
+      if (a <= 0 || c <= 0) return "Некоректні значення: сторони повинні бути > 0";
+      if (a >= c) return "Некоректні значення: катет повинен бути менший за гіпотенузу.";
+      b = Math.sqrt(c*c - a*a);
+      alpha = radToDeg(Math.asin(a/c));
+      beta = 90 - alpha;
+    }
+    else if ( (type1 === 'hypotenuse' && (type2 === 'angle' || type2 === 'adjacent angle' || type2 === 'opposite angle'))
+           || (type2 === 'hypotenuse' && (type1 === 'angle' || type1 === 'adjacent angle' || type1 === 'opposite angle')) ) {
+      if (type1 === 'hypotenuse') { c = num1; var angleVal = num2; var angleType = type2; }
+      else { c = num2; var angleVal = num1; var angleType = type1; }
+
+      if (c <= 0) return "Некоректні значення: гіпотенуза повинна бути > 0";
+      alpha = Number(angleVal);
+      if (!(alpha > 0 && alpha < 90)) return "Некоректні значення: кут має бути між 0 і 90 градусами (гострий кут).";
+      const ar = degToRad(alpha);
+      a = c * Math.sin(ar);
+      b = c * Math.cos(ar);
+      beta = 90 - alpha;
+    }
+    else if ( (type1 === 'leg' && (type2 === 'adjacent angle' || type2 === 'opposite angle'))
+           || (type2 === 'leg' && (type1 === 'adjacent angle' || type1 === 'opposite angle')) ) {
+      let legVal, angleVal, angleType;
+      if (type1 === 'leg') { legVal = num1; angleVal = num2; angleType = type2; }
+      else { legVal = num2; angleVal = num1; angleType = type1; }
+
+      if (legVal <= 0) return "Некоректні значення: катет повинен бути > 0";
+      const theta = Number(angleVal);
+      if (!(theta > 0 && theta < 90)) return "Некоректні значення: кут має бути між 0 і 90 градусами (гострий кут).";
+      const tr = degToRad(theta);
+
+      if (angleType === 'adjacent angle') {
+        c = legVal / Math.cos(tr);
+        a = legVal; 
+        b = Math.tan(tr) * legVal;
+        beta = theta; 
+        alpha = 90 - beta;
+      }
+      else { 
+        c = legVal / Math.sin(tr);
+        a = legVal; 
+        b = c * Math.cos(tr); 
+        alpha = theta; 
+        beta = 90 - alpha;
+      }
+
+      if (!(a > 0 && b > 0 && c > 0)) return "Некоректний результат — отримано не позитивні сторони.";
+      if (a >= c || b >= c) return "Некоректні значення: катет повинен бути меншим за гіпотенузу.";
+    }
+    else {
+      console.log("Несумісна пара типів аргументів. Перечитайте інструкцію.");
+      return "failed";
+    }
+
+    if (!(a > 0 && b > 0 && c > 0)) return "Некоректні значення: сторони повинні бути позитивними.";
+    if (a >= c || b >= c) return "Некоректні значення: катет повинен бути меншим за гіпотенузу.";
+    if (!(alpha > 0 && alpha < 90) || !(beta > 0 && beta < 90)) return "Некоректні значення: кути повинні бути гострими (0 < angle < 90).";
+
+    a = round(a, 6); b = round(b, 6); c = round(c, 6);
+    alpha = round(alpha, 6); beta = round(beta, 6);
+
+    const resultText =
+`Результат:
+  a = ${a}
+  b = ${b}
+  c = ${c}
+  alpha = ${alpha}° (кут протилежний a)
+  beta  = ${beta}° (кут протилежний b)`;
+
+    console.log(resultText);
+    const outEl = document.getElementById('out');
+    if (outEl) outEl.textContent = resultText;
+    return "success";
+  }
+  catch (err) {
+    console.log("Сталася помилка при обчисленнях:", err);
+    return "failed";
+  }
+}
+
+document.getElementById('solveBtn').addEventListener('click', () => {
+  const v1 = document.getElementById('val1').value;
+  const v2 = document.getElementById('val2').value;
+  const t1 = document.getElementById('type1').value;
+  const t2 = document.getElementById('type2').value;
+
+  const status = triangle(v1, t1, v2, t2);
+  console.log("Повернено:", status);
+  const outEl = document.getElementById('out');
+  if (outEl && typeof status === 'string' && status !== "success") {
+    outEl.textContent = "Повідомлення: " + status;
+  }
+});
+
+window.triangle = triangle; 
+</script>
+</body>
+</html>
