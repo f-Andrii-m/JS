@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lights Out</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">JavaScript lab · Lights Out</p>
+      <h1>Вимкни всі 25 джерел світла</h1>
+      <p class="subtitle">
+        Клікай по клітинках, щоб перемикати її та сусідів по вертикалі й горизонталі.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="stat">
+        <span class="stat-label">Ходи</span>
+        <strong id="moves">0</strong>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Час</span>
+        <strong id="time">00:00</strong>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Мінімум</span>
+        <strong id="target">—</strong>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Поточне поле</span>
+        <strong id="levelName">—</strong>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Ігрове поле 5 на 5"></div>
+    </section>
+
+    <section class="controls">
+      <button id="newGameBtn" class="btn primary">New Game</button>
+      <button id="restartBtn" class="btn">Restart</button>
+    </section>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
