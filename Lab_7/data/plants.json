@@ -1,0 +1,51 @@
+{
+  "category": {
+    "id": 3,
+    "name": "Рослини",
+    "shortname": "plants",
+    "notes": "Імітація каталогу кімнатних рослин та догляду.",
+    "title": "Рослини"
+  },
+  "items": [
+    {
+      "id": 301,
+      "name": "Монстера",
+      "shortname": "monstera",
+      "description": "Ефектна кімнатна рослина з великим декоративним листям.",
+      "price": "540 ₴",
+      "image": "https://placehold.co/300x200?text=Monstera"
+    },
+    {
+      "id": 302,
+      "name": "Сансевієрія",
+      "shortname": "sansevieria",
+      "description": "Невибаглива рослина для дому та офісу.",
+      "price": "390 ₴",
+      "image": "https://placehold.co/300x200?text=Sansevieria"
+    },
+    {
+      "id": 303,
+      "name": "Фікус",
+      "shortname": "ficus",
+      "description": "Популярна зелена рослина для затишного інтер'єру.",
+      "price": "610 ₴",
+      "image": "https://placehold.co/300x200?text=Ficus"
+    },
+    {
+      "id": 304,
+      "name": "Кактус набір",
+      "shortname": "cactus",
+      "description": "Малий набір для тих, хто любить простий догляд.",
+      "price": "320 ₴",
+      "image": "https://placehold.co/300x200?text=Cactus+Set"
+    },
+    {
+      "id": 305,
+      "name": "Орхідея",
+      "shortname": "orchid",
+      "description": "Ніжна декоративна квітка для особливого акценту.",
+      "price": "470 ₴",
+      "image": "https://placehold.co/300x200?text=Orchid"
+    }
+  ]
+}

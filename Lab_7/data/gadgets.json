@@ -1,0 +1,51 @@
+{
+  "category": {
+    "id": 2,
+    "name": "Гаджети",
+    "shortname": "gadgets",
+    "notes": "Підбірка невеликих пристроїв та аксесуарів.",
+    "title": "Гаджети"
+  },
+  "items": [
+    {
+      "id": 201,
+      "name": "Бездротові навушники",
+      "shortname": "earbuds",
+      "description": "Компактні навушники для музики, навчання та дзвінків.",
+      "price": "1290 ₴",
+      "image": "https://placehold.co/300x200?text=Earbuds"
+    },
+    {
+      "id": 202,
+      "name": "Портативна колонка",
+      "shortname": "speaker",
+      "description": "Мобільний звук для дому, подорожей і прогулянок.",
+      "price": "1490 ₴",
+      "image": "https://placehold.co/300x200?text=Speaker"
+    },
+    {
+      "id": 203,
+      "name": "Розумний годинник",
+      "shortname": "watch",
+      "description": "Стильний аксесуар для сповіщень, пульсу та кроків.",
+      "price": "2290 ₴",
+      "image": "https://placehold.co/300x200?text=Smart+Watch"
+    },
+    {
+      "id": 204,
+      "name": "Павербанк",
+      "shortname": "powerbank",
+      "description": "Запас енергії для смартфона та дрібної електроніки.",
+      "price": "990 ₴",
+      "image": "https://placehold.co/300x200?text=Powerbank"
+    },
+    {
+      "id": 205,
+      "name": "USB-хаб",
+      "shortname": "hub",
+      "description": "Зручне розширення портів для ноутбука чи ПК.",
+      "price": "790 ₴",
+      "image": "https://placehold.co/300x200?text=USB+Hub"
+    }
+  ]
+}

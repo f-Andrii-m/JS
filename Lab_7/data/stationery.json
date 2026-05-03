@@ -1,0 +1,51 @@
+{
+  "category": {
+    "id": 4,
+    "name": "Канцелярія",
+    "shortname": "stationery",
+    "notes": "Товари для навчання, нотаток і творчості.",
+    "title": "Канцелярія"
+  },
+  "items": [
+    {
+      "id": 401,
+      "name": "Блокнот A5",
+      "shortname": "notebook",
+      "description": "Зручний блокнот для конспектів, планів і ідей.",
+      "price": "180 ₴",
+      "image": "https://placehold.co/300x200?text=Notebook"
+    },
+    {
+      "id": 402,
+      "name": "Набір маркерів",
+      "shortname": "markers",
+      "description": "Яскраві маркери для виділення важливої інформації.",
+      "price": "260 ₴",
+      "image": "https://placehold.co/300x200?text=Markers"
+    },
+    {
+      "id": 403,
+      "name": "Гелеві ручки",
+      "shortname": "pens",
+      "description": "Пишуть плавно та підійдуть для щоденного використання.",
+      "price": "145 ₴",
+      "image": "https://placehold.co/300x200?text=Gel+Pens"
+    },
+    {
+      "id": 404,
+      "name": "Стікери",
+      "shortname": "stickers",
+      "description": "Кольорові наліпки для позначок, нагадувань і творчості.",
+      "price": "120 ₴",
+      "image": "https://placehold.co/300x200?text=Sticky+Notes"
+    },
+    {
+      "id": 405,
+      "name": "Папка-органайзер",
+      "shortname": "folder",
+      "description": "Допомагає впорядкувати документи та навчальні матеріали.",
+      "price": "210 ₴",
+      "image": "https://placehold.co/300x200?text=Folder"
+    }
+  ]
+}

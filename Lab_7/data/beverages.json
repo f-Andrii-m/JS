@@ -1,0 +1,51 @@
+{
+  "category": {
+    "id": 1,
+    "name": "Кава та напої",
+    "shortname": "beverages",
+    "notes": "Умовний каталог напоїв для демонстрації Ajax-завантаження.",
+    "title": "Кава та напої"
+  },
+  "items": [
+    {
+      "id": 101,
+      "name": "Еспресо",
+      "shortname": "espresso",
+      "description": "Насичений міцний напій для швидкого перезавантаження дня.",
+      "price": "45 ₴",
+      "image": "https://placehold.co/300x200?text=Espresso"
+    },
+    {
+      "id": 102,
+      "name": "Лате",
+      "shortname": "latte",
+      "description": "М'яка кава з молоком і приємною кремовою текстурою.",
+      "price": "62 ₴",
+      "image": "https://placehold.co/300x200?text=Latte"
+    },
+    {
+      "id": 103,
+      "name": "Капучино",
+      "shortname": "cappuccino",
+      "description": "Класичний баланс еспресо, молока та ніжної пінки.",
+      "price": "58 ₴",
+      "image": "https://placehold.co/300x200?text=Cappuccino"
+    },
+    {
+      "id": 104,
+      "name": "Матча-лате",
+      "shortname": "matcha",
+      "description": "Зелений напій із яскравим смаком та делікатним ароматом.",
+      "price": "74 ₴",
+      "image": "https://placehold.co/300x200?text=Matcha"
+    },
+    {
+      "id": 105,
+      "name": "Чай масала",
+      "shortname": "masala",
+      "description": "Пряний чайний напій зі спеціями та теплим післясмаком.",
+      "price": "66 ₴",
+      "image": "https://placehold.co/300x200?text=Masala"
+    }
+  ]
+}
