@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajax Catalog Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Ajax-каталог</h1>
+    </div>
+    <nav class="nav">
+      <a href="#" id="homeLink">Home</a>
+      <a href="#" id="catalogLink">Catalog</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Категорії</h2>
+      <div id="categoryLinks" class="links"></div>
+      <a href="#" id="specialsLink" class="specials">Specials</a>
+    </aside>
+
+    <section id="app" class="content">
+      <div class="loading">Оберіть категорію з каталогу або натисніть Catalog.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
