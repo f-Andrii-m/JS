@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+
+header {
+    background: #222;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.carousel {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 40px auto;
+    overflow: hidden;
+
+    position: relative;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: rgba(0,0,0,0.5);
+    color: white;
+
+    border: none;
+    padding: 10px;
+
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+
+    margin: 5px;
+
+    background: gray;
+
+    border-radius: 50%;
+    display: inline-block;
+
+    cursor: pointer;
+}
+
+.dot.active {
+    background: orange;
+}
+
+
+.large-images,
+.medium-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.large-images img,
+.medium-images img {
+    border-radius: 10px;
+}
+
+
+@media (min-width: 768px) {
+
+    .large-images {
+        display: flex;
+    }
+
+    .medium-images {
+        display: none;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 70px;
+        right: 20px;
+
+        background: #333;
+
+        flex-direction: column;
+
+        width: 200px;
+
+        padding: 15px;
+
+        border-radius: 10px;
+
+        display: none;
+
+        animation: dropdown 0.4s ease;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .large-images {
+        display: none;
+    }
+
+    .medium-images {
+        display: flex;
+    }
+}
+
+
+@keyframes dropdown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
