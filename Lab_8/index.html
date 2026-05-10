@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна №8</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="logo">
+            MySite
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+
+        <nav id="navMenu">
+            <a href="#">🏠 Головна</a>
+            <a href="#">📷 Галерея</a>
+            <a href="#">📞 Контакти</a>
+            <a href="#">ℹ️ Про нас</a>
+        </nav>
+
+    </header>
+
+    <!-- КАРУСЕЛЬ -->
+    <section class="carousel">
+
+        <div class="slides" id="slides">
+
+            <div class="slide">
+                <img src="https://placehold.co/900x400/orange/white?text=Slide+1">
+            </div>
+
+            <div class="slide">
+                <img src="https://placehold.co/900x400/blue/white?text=Slide+2">
+            </div>
+
+            <div class="slide">
+                <img src="https://placehold.co/900x400/green/white?text=Slide+3">
+            </div>
+
+        </div>
+
+        <button class="prev" id="prev">❮</button>
+        <button class="next" id="next">❯</button>
+
+        <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+
+    </section>
+
+    <section class="large-images">
+
+        <img src="https://placehold.co/300x200/red/white?text=Large+1">
+        <img src="https://placehold.co/300x200/purple/white?text=Large+2">
+        <img src="https://placehold.co/300x200/black/white?text=Large+3">
+
+    </section>
+
+    <section class="medium-images">
+
+        <img src="https://placehold.co/250x180/yellow/black?text=Medium+1">
+        <img src="https://placehold.co/250x180/cyan/black?text=Medium+2">
+        <img src="https://placehold.co/250x180/pink/black?text=Medium+3">
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
