@@ -1,0 +1,183 @@
+{
+  "categories": [
+    {
+      "name": "Смартфони",
+      "items": [
+        {
+          "name": "Apple iPhone 17 Pro Max",
+          "price": "$999",
+          "image": "img/Apple iPhone 17 Pro Max.jpg",
+          "description": "Мобільний телефон Apple iPhone 17 Pro Max 256GB Cosmic Orange"
+        },
+        {
+          "name": "Samsung Galaxy S25 FE 5G",
+          "price": "$899",
+          "image": "img/Samsung Galaxy S25 FE 5G.jpg",
+          "description": "Мобільний телефон Samsung Galaxy S25 FE 5G 8/256GB Navy"
+        },
+        {
+          "name": "Xiaomi Redmi Note 15",
+          "price": "$150",
+          "image": "img/Xiaomi Redmi Note 15.jpg",
+          "description": "Мобільний телефон Xiaomi Redmi Note 15 8/256GB Black"
+        },
+        {
+          "name": "Motorola E15",
+          "price": "$200",
+          "image": "img/Motorola E15.jpg",
+          "description": "Мобільний телефон Motorola E15 2/64GB Denim Blue"
+        }
+      ]
+    },
+
+    {
+      "name": "Монітори",
+      "items": [
+        {
+          "name": "Samsung Odyssey G4",
+          "price": "$150",
+          "image": "img/LS25BG400EIXUA.jpg",
+          "description": "Монітор 25 Samsung Odyssey G4 S25BG40 (LS25BG400EIXUA) IPS Full HD / 240Гц / 8-Bit / sRGB 99% / HDR10 / nVidia G-SYNC Compatible / AMD FreeSync Premium"
+        },
+        {
+          "name": "MSI MAG 274QRF-QD E2",
+          "price": "$450",
+          "image": "img/MSI MAG 274QRF-QD E2.jpg",
+          "description": "Монітор 27 MSI MAG 274QRF-QD E2 -- Quantum Dot / Rapid IPS QHD (2K) / 180Hz / 1ms GtG / 8-Bit + FRC / DisplayHDR 400 / Type-C 65W PD / G-Sync Compatible / Adaptive Sync / HAS / Pivot / KVM / Console Mode 2K 120Hz"
+        },
+        {
+          "name": "AOC 22B2H",
+          "price": "$70",
+          "image": "img/22B2HEU.jpg",
+          "description": "Монітор 21.5 AOC 22B2H Black (22B2H/EU) -- FullHD VA / 75 Гц / 4 мс GtG / HDMI 1.4 / Low Blue Light"
+        },
+        {
+          "name": "MSI MAG 245F X24",
+          "price": "$250",
+          "image": "img/MSI MAG 245F X24.jpg",
+          "description": "Монітор 23.8 MSI MAG 245F X24 -- FullHD / Rapid IPS 240Hz / 0.5ms (GtG) / 8-Bit + FRC / DCI-P3 87% / HDR Ready / Adaptive-Sync / AI Vision / USB Type-C (режим DP)"
+        }
+      ]
+    },
+
+    {
+      "name": "Ігрові консолі та дитячі приставки",
+      "items": [
+        {
+          "name": "Sony PlayStation 5 Slim Digital Edition",
+          "price": "$1000",
+          "image": "img/392132677.jpg",
+          "description": "Ігрова консоль Sony PlayStation 5 Slim Digital Edition 1TB"
+        },
+        {
+          "name": "Lenovo Legion Go Gen 2",
+          "price": "$1650",
+          "image": "img/392132678.jpg",
+          "description": "Ігрова консоль Lenovo Legion Go Gen 2 8APU1, 32GB, F1ТВ (83N10012RA)"
+        },
+        {
+          "name": "Ігрова приставка",
+          "price": "$50",
+          "image": "img/392132679.jpg",
+          "description": "Ігрова приставка 64gb 4K HDMI + 2 бездротові джойстики, консоль для телевізора"
+        },
+        {
+          "name": "Консоль Valve Steam Deck OLED",
+          "price": "$850",
+          "image": "img/392132680.jpg",
+          "description": "Консоль Valve Steam Deck OLED 512GB Black"
+        }
+      ]
+    },
+
+    {
+      "name": "Мікрофони",
+      "items": [
+        {
+          "name": "Fifine AM8",
+          "price": "$45",
+          "image": "img/392130000.jpg",
+          "description": "Мікрофон динамічний Fifine AM8 XLR/USB"
+        },
+        {
+          "name": "DJI Mic Mini Mobile Version",
+          "price": "$37",
+          "image": "img/392130001.jpg",
+          "description": "Мікрофонна радіосистема DJI Mic Mini Mobile Version (2 TX + 1 Mobile RX)"
+        },
+        {
+          "name": "Fifine K669B",
+          "price": "$100",
+          "image": "img/392130002.jpg",
+          "description": "Мікрофон динамічний Fifine K669B XLR/USB"
+        },
+        {
+          "name": "Hator Signify RGB",
+          "price": "$200",
+          "image": "img/392130003.jpg",
+          "description": "Мікрофон Hator Signify RGB (HTA-510)"
+        }
+      ]
+    },
+
+    {
+      "name": "Ігорові миші",
+      "items": [
+        {
+          "name": "Logitech G102",
+          "price": "$60",
+          "image": "img/392130010.jpg",
+          "description": "Миша Logitech G102 Lightsync USB Black (910-005823)"
+        },
+        {
+          "name": "HATOR Hellyberry HM47",
+          "price": "$55",
+          "image": "img/392130011.jpg",
+          "description": "Миша HATOR Hellyberry HM47 Wireless Black-Violet"
+        },
+        {
+          "name": "Ajazz AJ179 APEX",
+          "price": "$150",
+          "image": "img/392130012.jpg",
+          "description": "Миша Ajazz AJ179 APEX Wireless/Bluetooth/USB Black Charging Dock (AJM179-A-B)"
+        },
+        {
+          "name": "Hator Signify RGB",
+          "price": "$160",
+          "image": "img/392130013.jpg",
+          "description": "Миша A4Tech Bloody W95 Max USB Naraka (4711421982153)"
+        }
+      ]
+    },
+
+    {
+      "name": "Сервери та мережеве обладнання",
+      "items": [
+        {
+          "name": "Hewlett Packard Enterprise",
+          "price": "$2000",
+          "image": "img/392130020.jpg",
+          "description": "Сервер Hewlett Packard Enterprise SERVER MICRO PROLIANT E-2314/GEN10 16GB P54649-421 HPE (P54649-421 (1531033)"
+        },
+        {
+          "name": "ARTLINE Business T15v20",
+          "price": "$1055",
+          "image": "img/392130021.jpg",
+          "description": "Сервер ARTLINE Business T15v20 16GB P54649-421 HPE (P54649-421 (1531033)"
+        },
+        {
+          "name": " ARTLINE Business R36",
+          "price": "$3050",
+          "image": "img/392130022.jpg",
+          "description": "Сервер ARTLINE Business R36 16GB P54649-421 HPE (P54649-421 (1531033)"
+        },
+        {
+          "name": "HPE ML30 Gen11",
+          "price": "$3060",
+          "image": "img/392130023.jpg",
+          "description": "Сервер HPE ML30 Gen11 16GB P54649-421 HPE (P54649-421 (1531033)"
+        }
+      ]
+    }
+  ]
+}
