@@ -1,7 +1,10 @@
 const app = document.getElementById("app");
 let catalogData = [];
+let currentView = "catalog"; 
 
 function loadCatalog() {
+
+  loadFavorites(); 
 
   fetch("data/data.json")
     .then(res => res.json())
@@ -11,6 +14,15 @@ function loadCatalog() {
 
       renderCatalog(data);
     });
+}
+
+function getCurrentUser() {
+  return localStorage.getItem("username");
+}
+
+function getFavoritesKey() {
+  const user = getCurrentUser();
+  return user ? `favorites_${user}` : "favorites_guest";
 }
 
 function renderCatalog(data) {
@@ -72,7 +84,6 @@ function toggleTheme() {
   );
 }
 
-// при завантаженні
 window.addEventListener("load", () => {
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
@@ -196,9 +207,15 @@ function renderCard(item) {
   `;
 }
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let favorites = JSON.parse(
+  localStorage.getItem(getFavoritesKey())
+) || [];
 
 function toggleFavorite(name) {
+
+  loadFavorites();
+
+  const key = getFavoritesKey();
 
   if (favorites.includes(name)) {
     favorites = favorites.filter(item => item !== name);
@@ -206,23 +223,26 @@ function toggleFavorite(name) {
     favorites.push(name);
   }
 
-  localStorage.setItem(
-    "favorites",
-    JSON.stringify(favorites)
-  );
+  localStorage.setItem(key, JSON.stringify(favorites));
 
-  if (
-    document.getElementById("sortSelect").value === "favorites"
-  ) {
-    showFavorites();
+  if (currentView === "favorites") {
+    showFavorites();   
   } else {
-    loadCatalog();
+    loadCatalog();     
   }
 }
 
+function loadFavorites() {
+  favorites = JSON.parse(
+    localStorage.getItem(getFavoritesKey())
+  ) || [];
+}
+
 function showFavorites() {
-  const favorites =
-    JSON.parse(localStorage.getItem("favorites")) || [];
+
+  currentView = "favorites"; 
+
+  loadFavorites();
 
   fetch("data/data.json")
     .then(res => res.json())
